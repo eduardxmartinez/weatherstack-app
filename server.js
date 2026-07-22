@@ -24,8 +24,7 @@ app.get('/api/weather', async (req, res) => {
     url.search = new URLSearchParams({
       access_key: process.env.WEATHERSTACK_API_KEY,
       query: location,
-      units: 'm',
-      language: 'es'
+      units: 'm'
     }).toString();
 
     const response = await fetch(url, { signal: AbortSignal.timeout(10000) });
